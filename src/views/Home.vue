@@ -1,17 +1,3 @@
 <template>
-  <UserCreate />
-  <UserList />
+  <h1>This is Home</h1>
 </template>
-
-<script>
-import UserCreate from '@/components/UserCreate.vue'
-import UserList from '@/components/UserList.vue'
-
-export default {
-  name: 'App',
-  components: {
-    UserCreate,
-    UserList
-  }
-}
-</script>

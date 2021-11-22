@@ -13,7 +13,7 @@
           <td>{{ name }}</td>
           <td>{{ email }}</td>
           <td>
-            <router-link :to="`/edit/${id}`">
+            <router-link :to="`/users/edit/${id}`">
               <button class="btn btn-primary btn-sm me-2">Edit</button>
             </router-link>
             <button class="btn btn-danger btn-sm" @click="deleteUser(id)">
