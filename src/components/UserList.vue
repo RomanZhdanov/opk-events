@@ -27,12 +27,12 @@
 </template>
 
 <script>
-import { useLoadUsers, deleteUser } from '@/firebase';
+import { useLoadUsers, deleteUser } from '@/firebase'
 
 export default {
   setup() {
-    const users = useLoadUsers();
-    return { users, deleteUser };
-  },
-};
+    const users = useLoadUsers()
+    return { users, deleteUser }
+  }
+}
 </script>
