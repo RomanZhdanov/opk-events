@@ -15,6 +15,7 @@ const firebaseApp = firebase.initializeApp(config)
 
 const db = firebaseApp.firestore()
 const usersCollection = db.collection('users')
+const eventsCollection = db.collection('events')
 
 export const createUser = (user) => {
   return usersCollection.add(user)
@@ -40,4 +41,30 @@ export const useLoadUsers = () => {
   })
   onUnmounted(close)
   return users
+}
+
+export const createEvent = (event) => {
+  return eventsCollection.add(event)
+}
+
+export const getEvent = async (id) => {
+  const event = await eventsCollection.doc(id).get()
+  return event.exists ? event.data() : null
+}
+
+export const updateEvent = (id, event) => {
+  return eventsCollection.doc(id).update(event)
+}
+
+export const deleteEvent = (id) => {
+  return eventsCollection.doc(id).delete()
+}
+
+export const useLoadEvents = () => {
+  const events = ref([])
+  const close = eventsCollection.onSnapshot((snapshot) => {
+    events.value = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+  })
+  onUnmounted(close)
+  return events
 }
