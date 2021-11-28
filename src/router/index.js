@@ -3,6 +3,7 @@ import Home from '@/views/Home.vue'
 import EventsList from '@/views/events/EventsList.vue'
 import EventDetails from '@/views/events/EventDetails.vue'
 import CreateEvent from '@/views/events/CreateEvent.vue'
+import EditEvent from '@/views/events/EditEvent.vue'
 import UsersList from '@/views/users/UsersList.vue'
 import EditUser from '@/views/users/EditUser.vue'
 
@@ -18,12 +19,15 @@ const routes = [
   },
   {
     path: '/events/:id',
-    component: EventDetails,
-    props: true
+    component: EventDetails
   },
   {
     path: '/events/create',
     component: CreateEvent
+  },
+  {
+    path: '/events/edit/:id',
+    component: EditEvent
   },
   {
     path: '/users',
