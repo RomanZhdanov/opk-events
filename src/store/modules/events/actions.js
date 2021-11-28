@@ -1,4 +1,4 @@
-import { useLoadEvents, createEvent } from '@/firebase'
+import { useLoadEvents, createEvent, deleteEvent } from '@/firebase'
 
 export default {
   loadEvents(context) {
@@ -8,5 +8,9 @@ export default {
   async addNewEvent(context, data) {
     await createEvent(data)
     context.commit('addEvent', data)
+  },
+  deleteEvent(context, id) {
+    deleteEvent(id)
+    context.commit('removeEvent', id)
   }
 }
