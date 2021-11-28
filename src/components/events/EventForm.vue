@@ -20,6 +20,9 @@
       <label for="payto" class="form-label">Куда переводить</label>
       <input type="text" class="form-control" id="payto" v-model="payto" />
     </div>
+    <p class="text-danger" v-if="!formIsValid">
+      Необходимо заполнить все поля!
+    </p>
     <button type="submit" class="btn btn-primary">Добавить</button>
     <button type="button" class="btn btn-default" @click="cancel">
       Отмена
@@ -35,11 +38,25 @@ export default {
       date: null,
       place: '',
       price: '',
-      payto: ''
+      payto: '',
+      formIsValid: true
     }
   },
   methods: {
     onSubmit() {
+      this.formIsValid = true
+
+      if (
+        this.name === '' ||
+        this.date === null ||
+        this.place === '' ||
+        this.price === '' ||
+        this.payto === ''
+      ) {
+        this.formIsValid = false
+        return
+      }
+
       this.$store.dispatch('events/addNewEvent', {
         name: this.name,
         date: this.date,
