@@ -20,7 +20,10 @@
       <label for="payto" class="form-label">Куда переводить</label>
       <input type="text" class="form-control" id="payto" v-model="payto" />
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Добавить</button>
+    <button type="button" class="btn btn-default" @click="cancel">
+      Отмена
+    </button>
   </form>
 </template>
 
@@ -44,6 +47,11 @@ export default {
         price: this.price,
         payto: this.payto
       })
+
+      this.$router.replace('/')
+    },
+    cancel() {
+      this.$router.replace('/')
     }
   }
 }
