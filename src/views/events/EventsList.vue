@@ -3,15 +3,16 @@
   <router-link to="/events/create" class="btn btn-primary"
     >Добавить мероприятие</router-link
   >
-  <ul>
-    <li v-for="event in events" :key="event.id">
-      {{ event.name }}
-    </li>
-  </ul>
+  <events-table :events="events" />
 </template>
 
 <script>
+import EventsTable from '@/components/events/EventsTable.vue'
+
 export default {
+  components: {
+    EventsTable
+  },
   created() {
     this.loadEvents()
   },
