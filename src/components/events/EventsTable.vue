@@ -9,7 +9,9 @@
     </thead>
     <tbody>
       <tr v-for="{ id, name, place } in events" :key="id">
-        <td>{{ name }}</td>
+        <td>
+          <router-link :to="`/events/${id}`">{{ name }}</router-link>
+        </td>
         <td>{{ place }}</td>
         <td>
           <router-link :to="`/events/edit/${id}`">
