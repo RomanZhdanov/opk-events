@@ -4,9 +4,7 @@
   <p><strong>Где:</strong> {{ event.place }}</p>
   <p><strong>Цена:</strong> {{ event.price }}</p>
   <p><strong>Куда переводить:</strong> {{ event.payto }}</p>
-  <button @click="backToList" class="btn btn-primary">
-    К списку мероприятий
-  </button>
+  <button @click="backToList" class="btn btn-link">К списку мероприятий</button>
 </template>
 
 <script>

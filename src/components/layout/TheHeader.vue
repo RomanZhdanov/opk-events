@@ -19,7 +19,7 @@
         <span class="fs-4">Обстановка по кайфу</span>
       </a>
 
-      <ul class="nav nav-pills">
+      <ul class="nav">
         <li class="nav-item">
           <router-link class="nav-link" to="/events">Мероприятия</router-link>
         </li>

@@ -1,8 +1,8 @@
 <template>
-  <div class="d-flex justify-content-between">
-    <h2>Список мероприятий</h2>
+  <div class="d-flex justify-content-between mb-3">
+    <h3>Список мероприятий</h3>
     <div>
-      <router-link to="/events/create" class="btn btn-primary"
+      <router-link to="/events/create" class="btn btn-outline-primary"
         >Добавить мероприятие</router-link
       >
     </div>

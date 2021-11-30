@@ -65,8 +65,8 @@
         Необходимо указать кому переводить деньги.
       </div>
     </div>
-    <button type="submit" class="btn btn-primary">{{ buttonText }}</button>
-    <button type="button" class="btn btn-default" @click="cancel">
+    <button type="submit" class="btn btn-primary me-2">{{ buttonText }}</button>
+    <button type="button" class="btn btn-secondary" @click="cancel">
       Отмена
     </button>
   </form>
