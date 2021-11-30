@@ -62,9 +62,11 @@ export const deleteEvent = (id) => {
 
 export const useLoadEvents = () => {
   const events = ref([])
-  const close = eventsCollection.onSnapshot((snapshot) => {
-    events.value = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
-  })
+  const close = eventsCollection
+    .orderBy('date', 'desc')
+    .onSnapshot((snapshot) => {
+      events.value = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+    })
   onUnmounted(close)
   return events
 }

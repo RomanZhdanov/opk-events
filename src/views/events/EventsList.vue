@@ -1,8 +1,12 @@
 <template>
-  <h2>Events list</h2>
-  <router-link to="/events/create" class="btn btn-primary"
-    >Добавить мероприятие</router-link
-  >
+  <div class="d-flex justify-content-between">
+    <h2>Список мероприятий</h2>
+    <div>
+      <router-link to="/events/create" class="btn btn-primary"
+        >Добавить мероприятие</router-link
+      >
+    </div>
+  </div>
   <events-table :events="events" />
 </template>
 
